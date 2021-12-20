@@ -1,0 +1,232 @@
+{
+  "topBarJSX": { 
+        "menuUserSetting": "User settings",
+        "menuLogOutUser": "Log out" 
+  },
+  "landingPage": {
+        "headerTitle": "Siiliwall Projects",
+        "contentTitle": "All Projects",
+        "addproject":"Add Project",
+        "archiveproject":"Archive Project",
+        "restoreproject":"Restore Project"
+    },
+    "addproject": {
+        "newproject":"New Project",
+        "namingInstructions": "Please enter the name for the project",
+        "placeholderName": "Name",
+        "cancel":"Cancel",
+        "add":"Add"
+    },
+    "archiveproject": {
+        "archiveProject": "Archive Project",
+        "selectActive":"Select Projects to archive",
+        "close":"Close"
+    },
+    "deleteProjectConfirmation": {
+        "if0Boards": "This Project has 0 boards.",
+        "if1Boards": "This Project has 1 board and the number of tasks is {{count}}.",
+        "ifMultipleBoards": "This Project has {{index}} boards and the number of tasks is {{count}}.",
+        "removeConfirmation":"Are you sure you want to archive Project {{projectname}}?",
+        "disagree":"Cancel",
+        "agree": "Confirm"
+    },
+    "restoreproject": {
+        "restoreProject": "Restore Project",
+        "selectActive": "Select archived projects to restore",
+        "close" : "Close"
+    },
+    "boardPageJSX": {
+        "titleLinkProjects": "Projects",
+        "titleLinkBoards": "Boards",
+        "showKanban": "Show Kanban",
+        "showSwimlane": "Show swimlane",
+        "archivedTasks": "Archived tasks",
+        "selectColor": "Select color",
+        "selectUser": "Select user",
+        "searchByName": "Search by task name",
+        "name": "Name",
+        "add": "Add",
+        "goBack": "Go back",
+        "goHome": "Go to homepage",
+        "archiveButton": "Archived Tasks"
+    },
+    "projectPage": {
+        "titleLinkProjects": "Projects",
+        "addproject":"Add Board",
+        "deleteboard":"Delete Board",
+        "restoreboard":"Restore Board",
+        "adduser":"Add user",
+        "users":"Archive user",
+        "restoreUsers": "Restore user",
+        "goHome": "Go to homepage",
+        "allBoardsTitle": "All Boards"
+    },
+
+    "newBoardForm": {
+        "newboard":"New board",
+        "boardcredentials":"Please enter the credentials for the board.",
+        "name":"Name",
+        "shortform":"Short form",
+        "cancel":"Cancel",
+        "add": "Add",
+        "helpertexterror": "Has to be 2-5 characters long",
+        "helpertextexists": "Short form already exists"
+    },
+    "newUserForm": {
+        "newuser":"New User",
+        "usercredentials":" Please enter the credentials for the user.",
+        "cancel":"Cancel",
+        "name":"Name",
+        "add": "Add"
+    },
+    "userForm": {
+        "user":"Users",
+        "usertoremove":"Select user to remove."
+    },
+    "deleteUserPopup": {
+        "disagree":"Cancel",
+        "agree":"Agree",
+        "doYouWant":"Are you sure you want to delete the user {{user}} from this project?"
+    },
+    "boardForm": {
+        "board":"Boards",
+        "boardtoremove":"Select board to remove.",
+        "name":"Name",
+        "shortform":"Short form",
+        "cancel":"Cancel",
+        "add": "Add"
+    },
+    "deleteBoardPopup": {
+        "noTasks":"This board has 0 tasks",
+        "oneTask":"This board has 1 task",
+        "multipleTasks":"There are {{taskCount}} tasks in this board",
+        "doYouWant":"Do you want to remove the board {{board}} from this project?",
+        "disagree": "Cancel",
+        "agree": "Agree"
+    },
+    "columnList": {
+        "name": "Name",
+        "add": "ADD"
+    },
+    "dropdownColumn": {
+        "remove": "REMOVE"
+    },
+    "addTaskDialog": {
+        "createNew": "Create a new task",
+        "title": "Title",
+        "selectSP": "Select story points",
+        "selectColors": "Select colors",
+        "selectOwner": "Select owner",
+        "selectMembers": "Select members",
+        "description": "Description",
+        "cancel": "Cancel",
+        "renameColors": "Rename Colors",
+        "saveChanges":"Save changes",
+        "createTask": "Create Task",
+        "notEstimated": "Not estimated"
+    },
+    "dropdownTask": {
+        "createSubtask": "Create subtask",
+        "archive": "Archive",
+        "remove": "Remove"
+    },
+    "editTaskDialog": {
+        "spentSPerror" : "Spent story points value has to be between 0 and ",
+        "notEstimated" : "Not estimated",
+        "columnNotSelected" : "Choose a column you want to restore the task to",
+        "spentSPerrorNotEstimated" : "You need to have a story point value before adding spent story points",
+        "editTask": "Edit task",
+        "name": "Name",
+        "selectSP": "Select story points",
+        "spentSP": "Spent story points",
+        "spentSPPlaceholder": "Set spent story points",
+        "selectColors": "Select colors",
+        "selectOwner": "Select owner",
+        "selectMembers": "Select members",
+        "description": "Description",
+        "cancel": "Cancel",
+        "renameColors": "Rename Colors",
+        "saveChanges":"Save changes",
+        "submitEdit": "Submit edit",
+        "submitRestore": "Restore task",
+        "currentColumn": "Column: ",
+        "selectColumn":"Select column"
+    },
+    "task": {
+        "pointsLeftNotEstimated": "Points left: Not estimated",
+        "pointsLeft": "Points left: "
+    },
+    "addSubtaskDialog": {
+        "createNew": "Create a new subtask",
+        "name": "Name",
+        "content": "Content",
+        "selectSP": "Select story points",
+        "selectColors": "Select colors",
+        "selectOwner": "Select owner",
+        "selectMembers": "Select members",
+        "selectColumn": "Select column",
+        "description": "Description",
+        "cancel": "Cancel",
+        "renameColors": "Rename Colors",
+        "saveChanges":"Save changes",
+        "createTask": "Create Subtask",
+        "notEstimated": "Not estimated"
+    },
+    "dropdownSubtask": {
+        "archive": "Archive",
+        "remove": "Remove"
+    },
+    "editSubtaskDialog": {
+        "spentSPerror" : "Spent story points value has to be between 0 and ",
+        "notEstimated" : "Not estimated",
+        "spentSPerrorNotEstimated" : "You need to have a story point value before adding spent story points",
+        "columnNotSelected" : "Choose a column you want to restore the subtask to",
+        "editTask": "Edit subtask",
+        "name": "Name",
+        "content": "Content",
+        "selectSP": "Select story points",
+        "spentSP": "Spent story points",
+        "spentSPPlaceholder": "Set spent story points",
+        "selectColors": "Select colors",
+        "selectOwner": "Select owner",
+        "selectMembers": "Select members",
+        "description": "Description",
+        "cancel": "Cancel",
+        "renameColors": "Rename Colors",
+        "saveChanges":"Save changes",
+        "submitEdit": "Submit edit",
+        "currentColumn": "Column: ",
+        "selectColumn": "Select column",
+        "submitRestore": "Restore subtask"
+    },
+    "subtask": {
+        "pointsLeftNotEstimated": "Points left: Not estimated",
+        "pointsLeft": "Points left: "
+    },
+    "alertBox" : {
+        "deleteColumn": "This action will permanently remove the selected column! Are you sure you want to delete it?",
+        "deleteTask":"This action will permanently delete this task from the board and it can't be later examined! Are you sure you want to delete it?",
+        "archiveTask":"The task is removed from the board, but can be examined through the archive setting.",
+        "archiveSubtask":"The subtask is removed from the board, but can be examined through the archive setting.",
+        "deleteSubtask":"This action will permanently delete this task from the board and it can't be later examined! Are you sure you want to delete it?",
+        "deleteTaskIfSubtask":"This task has {{count}} subtasks archived or on the board! Deletion of the task will permanently remove all the subtasks as well!",
+        "archiveTaskIfSubtask":"This task has {{count}} unfinished  subtask(s) on the board! Archiving the task will also archive it's subtasks.",
+        "columnHasTickets":"This column has tickets, you must empty the column before deleting it.",
+        "understand": "I understand",
+        "archive":"Archive",
+        "delete": "Delete",
+        "close": "Close",
+        "undo": "Undo"
+    },
+    "restoreTasks" : {
+        "details": "Details",
+        "restoreTask": "Restore task",
+        "selectTask":"Select a task to restore",
+        "tasks": "Tasks",
+        "subtasks": "Subtasks"
+    },
+    "restoreBoardPopup" : {
+        "restoreBoard" : "Restore board",
+        "close" : "Close"
+    }
+}

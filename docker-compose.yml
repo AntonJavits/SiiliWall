@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  backend:
+    build: './server'
+    ports:
+      - "4001:4001"
+    environment:
+      PORT: "4001"
+      NODE_ENV: "production"
+      DB_USERNAME: "root"
+      DB_PASSWORD: "root"
+      DB_HOST: "db"
+      DB_DATABASE: "siiliwalldev"
+      QUEUE_URL: "https://sqs.eu-west-1.amazonaws.com/018666200346/siiliwall.fifo"
+  db:
+    build: "./mysql"
+    ports:
+      - "3306:3306"
+    security_opt:
+      - seccomp:unconfined
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITARY: 1
+    restart:
+      always
+    ports:
+      - "8081:80"

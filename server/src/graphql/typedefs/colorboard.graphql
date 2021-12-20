@@ -1,0 +1,13 @@
+type ColorBoard {
+  colorId: ID!
+  boardId: ID!
+  name: String!
+}
+
+type Query {
+  allEpicColors: [ColorBoard]!
+}
+
+type Mutation {
+  addEpicColors(colorId: ID!, boardId: ID!, name: String!): ColorBoard
+}

@@ -1,0 +1,9 @@
+type Color {
+  id: ID!
+  color: String!
+}
+
+type Query {
+  allColors: [Color!]!
+  colorById(id: ID!): Color!
+}

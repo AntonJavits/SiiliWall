@@ -1,0 +1,90 @@
+type Task {
+  id: ID!
+  prettyId: String!
+  title: String!
+  owner: User
+  storyPoints: String
+  spentStoryPoints: String
+  description: String
+  column: Column!
+  columnOrderNumber: Int!
+  swimlaneOrderNumber: Int
+  subtasks: [Subtask!]!
+  subtaskOrder: [ID!]!
+  deletedAt: String
+  members: [User!]!
+  colors: [Color!]!
+  board: Board
+}
+
+type Query {
+  taskById(id: ID!): Task!
+  allColors: [Color!]!
+  allTasks: [Task!]!
+  archivedTasks(id: ID!): [Task!]!
+  archivedTasksByColumnId(id: ID!): [Task!]
+}
+
+type Mutation {
+  addTaskForColumn(
+    boardId: ID!
+    columnId: ID!
+    title: String!
+    storyPoints: String
+    spentStoryPoints: String
+    ownerId: ID
+    memberIds: [ID!]
+    colorIds: [ID!]
+    description: String
+    eventId: ID!
+  ): Task
+  editTaskById(
+    id: ID!
+    title: String!
+    storyPoints: String
+    spentStoryPoints: String
+    ownerId: ID
+    oldMemberIds: [ID!]
+    newMemberIds: [ID!]
+    oldColorIds: [ID!]
+    newColorIds: [ID!]
+    description: String
+    eventId: ID!
+    columnId: ID!
+  ): Task
+  deleteTaskById(id: ID!, columnId: ID!, boardId: ID!, eventId: ID!): ID
+  archiveTaskById(id: ID!, columnId: ID!, boardId: ID!, eventId: ID!): ID
+  addMemberForTask(id: ID!, userId: ID!): Task
+  restoreTaskById(taskId: ID!, boardId: ID!, eventId: ID!): ID
+}
+
+type Subscription {
+  taskMutated(boardId: ID!, eventId: ID!): TaskMutationPayload!
+  taskRemoved(boardId: ID!, eventId: ID!): TaskRemovedPayload!
+}
+
+type TaskMutationPayload {
+  mutationType: MutationType!
+  node: Task!
+}
+
+type TaskRemovedPayload {
+  removeType: RemoveType!
+  removeInfo: RemoveInfo!
+}
+
+type RemoveInfo {
+  taskId: ID!
+  columnId: ID!
+  boardId: ID!
+}
+
+enum MutationType {
+  CREATED
+  UPDATED
+}
+
+enum RemoveType {
+  DELETED
+  ARCHIVED
+}

@@ -1,0 +1,236 @@
+{
+  "topBarJSX": { 
+        "menuUserSetting": "Käyttäjän asetukset",
+        "menuLogOutUser": "Kirjaudu ulos" 
+},  
+  "landingPage": {
+        "headerTitle": "Siiliwall projektit",
+        "contentTitle": "Kaikki projektit",
+        "addproject":"Lisää projekti",
+        "archiveproject":"Arkistoi projekti",
+        "restoreproject":"Palauta projekti"
+    },
+    "addproject": {
+        "newproject":"Uusi projekti",
+        "namingInstructions": "Nimeä projekti",
+        "placeholderName": "Nimi",
+        "cancel":"Peruuta",
+        "add":"Lisää"
+    },
+    "archiveproject": {
+        "archiveProject": "Arkistoi projekti",
+        "selectActive":"Valitse arkistoitavat projektit",
+        "close":"Sulje"
+    },
+    "deleteProjectConfirmation": {
+        "if0Boards": "Tässä projektissa on 0 taulua.",
+        "if1Boards": "Tässä projektissa on 1 taulu ja tehtävien lukumäärä on {{count}}.",
+        "ifMultipleBoards": "Tässä projektissa on {{index}} taulua ja tehtävien lukumäärä on {{count}}.",
+        "removeConfirmation":"Haluatko varmasti arkistoida projektin {{projectname}}?",
+        "disagree":"Peruuta",
+        "agree": "Hyväksy"
+        
+    },
+    "restoreproject": {
+        "restoreProject": "Palauta projekti",
+        "selectActive": "Valitse palautettava projekti",
+        "close" : "Sulje"
+    },
+    "boardPageJSX": {
+        "titleLinkProjects": "Projektit",
+        "titleLinkBoards": "Taulut",
+        "showKanban": "Näytä Kanban",
+        "showSwimlane": "Näytä swimlane malli",
+        "archivedTasks": "Arkistoidut tehtävät",
+        "selectColor": "Valitse väri",
+        "selectUser": "Valitse käyttäjä",
+        "searchByName": "Etsi tehtävää nimellä",
+        "name": "Nimi",
+        "add": "Lisää",
+        "goBack": "Takaisin",
+        "goHome": "Kotisivulle",
+        "archiveButton": "Arkistoidut tehtävät"
+        
+    },
+    "projectPage": {
+        "titleLinkProjects": "Projektit",
+        "addproject":"Lisää Taulu",
+        "deleteboard":"Poista Taulu",
+        "restoreboard":"Palauta Taulu",
+        "adduser":"Lisää käyttäjä",
+        "users":"Arkistoi käyttäjä",
+        "restoreUsers": "Palauta käyttäjä",
+        "goHome": "Kotisivulle",
+        "allBoardsTitle": "Kaikki taulut"
+    },
+
+    "newBoardForm": {
+        "newboard":"Uusi taulu",
+        "boardcredentials":"Anna taululle nimi ja tunniste",
+        "name":"Nimi",
+        "shortform":"Tunniste",
+        "cancel":"Peruuta",
+        "add": "Lisää",
+        "helpertexterror": "Pitää olla 2-5 merkkiä",
+        "helpertextexists": "Tunniste on jo käytössä"
+    },
+    "newUserForm": {
+        "newuser":"Uusi käyttäjä",
+        "usercredentials":"Anna käyttäjälle nimi",
+        "cancel":"Peruuta",
+        "name":"Nimi",
+        "add": "Lisää"
+    },
+    "userForm": {
+        "user":"Käyttäjät",
+        "usertoremove":"Valitse poistettava käyttäjä"
+    },
+    "deleteUserPopup": {
+        "disagree":"Peruuta",
+        "agree":"Hyväksy",
+        "doYouWant":"Haluatko varmasti poistaa käyttäjän {{user}} tästä projektista?"
+    },
+    "boardForm": {
+        "board":"Taulut",
+        "boardtoremove":"Valitse poistettava taulu.",
+        "name":"Nimi",
+        "shortform":"Tunniste",
+        "cancel":"Peruuta",
+        "add": "Lisää"
+    },
+    "deleteBoardPopup": {
+        "noTasks":"Tällä taululla ei ole tehtäviä",
+        "oneTask":"Tällä taululla on yksi tehtävä",
+        "multipleTasks":"Tällä taululla on {{taskCount}} tehtävää",
+        "doYouWant":"Haluatko poistaa taulun {{board}} tästä projektista?",
+        "disagree": "Peruuta",
+        "agree": "Hyväksy"
+    },
+    "columnList": {
+        "name": "Nimi",
+        "add": "LISÄÄ"
+    },
+    "dropdownColumn": {
+        "remove": "POISTA"
+    },
+    "addTaskDialog": {
+        "createNew": "Luo uusi tehtävä",
+        "title": "Otsikko",
+        "selectSP": "Valitse story pointit",
+        "selectColors": "Valitse värit",
+        "selectOwner": "Valitse omistaja",
+        "selectMembers": "Valitse jäsenet",
+        "description": "Kuvaus",
+        "cancel": "Peruuta",
+        "renameColors": "Uudelleennimeä värit",
+        "saveChanges":"Tallenna muutokset",
+        "createTask": "Luo tehtävä",
+        "notEstimated": "Ei arvioitu"
+    },
+    "dropdownTask": {
+        "createSubtask": "Luo alitehtävä",
+        "archive": "Arkistoi",
+        "remove": "Poista"
+    },
+    "editTaskDialog": {
+        "spentSPerror" : "Käytetyillä story pointseilla tulee olla arvo väliltä 0 ja ",
+        "notEstimated" : "Ei arvioitu",
+        "columnNotSelected" : "Valitse sarake johon haluat palauttaa tehtävän",
+        "spentSPerrorNotEstimated" : "Sinulla pitää olla story points arvo ennen kuin voit lisätä käytettyjä story pointseja",
+        "editTask": "Muokkaa tehtävää",
+        "name": "Nimi",
+        "selectSP": "Valitse story pointit",
+        "selectColors": "Valitse värit",
+        "selectOwner": "Valitse omistaja",
+        "selectMembers": "Valitse jäsenet",
+        "description": "Kuvaus",
+        "spentSP": "Käytetyt story pointsit",
+        "spentSPPlaceholder": "Aseta käytetyt story pointsit",
+        "cancel": "Peruuta",
+        "renameColors": "Uudelleennimeä värit",
+        "saveChanges":"Tallenna muutokset",
+        "submitEdit": "Tallenna muokkaukset",
+        "submitRestore": "Palauta tehtävä",
+        "currentColumn": "Sarake: ",
+        "selectColumn":"Valitse sarake"
+    },
+    "task": {
+        "pointsLeftNotEstimated": "Pisteitä jäljellä: Ei arvioitu",
+        "pointsLeft": "Pisteitä jäljellä: "
+    },
+    "addSubtaskDialog": {
+        "createNew": "Luo uusi alitehtävä",
+        "name": "Nimi",
+        "content": "Sisältö",
+        "selectSP": "Valitse story pointit",
+        "selectColors": "Valitse värit",
+        "selectOwner": "Valitse omistaja",
+        "selectMembers": "Valitse jäsenet",
+        "selectColumn": "Valitse sarake",
+        "description": "Kuvaus",
+        "cancel": "Peruuta",
+        "renameColors": "Uudelleennimeä värit",
+        "saveChanges":"Tallenna muutokset",
+        "createTask": "Luo alitehtävä",
+        "notEstimated": "Ei arvioitu"
+        
+    },
+    
+    "dropdownSubtask": {
+        "archive": "Arkistoi",
+        "remove": "Poista"
+    },
+    "editSubtaskDialog": {
+        "spentSPerror" : "Käytetyillä story pointseilla tulee olla arvo väliltä 0 ja ",
+        "notEstimated" : "Ei arvioitu",
+        "spentSPerrorNotEstimated" : "Sinulla pitää olla story points arvo ennen kuin voit lisätä käytettyjä story pointseja",
+        "columnNotSelected" : "Valitse sarake johon haluat palauttaa alitehtävän",
+        "editTask": "Muokkaa alitehtävää",
+        "name": "Nimi",
+        "content": "Sisältö",
+        "selectSP": "Valitse story pointit",
+        "selectColors": "Valitse värit",
+        "selectOwner": "Valitse omistaja",
+        "selectMembers": "Valitse jäsenet",
+        "description": "Kuvaus",
+        "spentSP": "Käytetyt story pointsit",
+        "spentSPPlaceholder": "Aseta käytetyt story pointsit",
+        "cancel": "Peruuta",
+        "renameColors": "Uudelleennimeä värit",
+        "saveChanges":"Tallenna muutokset",
+        "submitEdit": "Tallenna muokkaukset",
+        "currentColumn": "Sarake: ",
+        "selectColumn": "Valitse sarake",
+        "submitRestore": "Palauta alitehtävä"
+    },
+    "subtask": {
+        "pointsLeftNotEstimated": "Pisteitä jäljellä: Ei arvioitu",
+        "pointsLeft": "Pisteitä jäljellä: "
+    },
+    "alertBox" : {
+        "deleteColumn": "Tämä toiminto tulee poistamaan valitun sarakkeen lopullisesti! Haluatko varmasti poistaa sarakkeen?",
+        "deleteTask":"Tämä toiminto tulee poistamaan valitun tehtävän taululta eikä sitä voi enää myöhemmin tarkastella! Haluatko varmasti poistaa tehtävän?",
+        "archiveTask":"Tehtävä tullaan poistamaan taululta, mutta sitä voi vielä tarkastella tehtäväarkistosta",
+        "archiveSubtask":"Alitehtävä tullaan poistamaan taululta, mutta sitä voi vielä tarkastella tehtäväarkistosta",
+        "deleteSubtask":"Tämä toiminto tulee poistamaan valitun alitehtävän taululta eikä sitä voi enää myöhemmin tarkastella! Haluatko varmasti poistaa alitehtävän?",
+        "deleteTaskIfSubtask":"Tällä tehtävällä on {{count}} keskeneräistä alitehtävää ! Tehtävän poistaminen tulee poistamaan tämän tehtävän arkistoidut ja taululla olevat alitehtävät!",
+        "archiveTaskIfSubtask":"Tällä tehtävällä on keskeneräisiä alitehtäviä  {{count}}! Tehtävän arkistointi arkistoi myös sen alitehtävät, mutta niitä voi vielä tarkastella tehtäväarkistosta.",
+        "columnHasTickets":"Tällä sarakkeella on tehtäviä, sinun pitää tyhjentää sarake ennen sen poistamista.",
+        "understand": "Ymmärrän",
+        "archive":"Arkistoi",
+        "delete": "Poista",
+        "close": "Sulje",
+        "undo":"Peruuta"
+    },
+    "restoreTasks" : {
+        "details": "Tiedot",
+        "restoreTask": "Palauta tehtävä",
+        "selectTask":"Valitse palautettava tehtävä",
+        "tasks": "Tehtävät",
+        "subtasks": "Alitehtävät"
+    },
+    "restoreBoardPopup" : {
+        "restoreBoard": "Palauta taulu",
+        "close": "Sulje"
+    }
+}

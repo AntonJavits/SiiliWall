@@ -1,0 +1,89 @@
+type Board {
+  id: ID!
+  projectId: ID!
+  prettyId: String!
+  name: String!
+  orderNumber: Int!
+  columns: [Column!]!
+  columnOrder: [ID!]!
+  swimlaneOrder: [ID!]!
+  ticketCount: Int
+  
+}
+
+type Query {
+  allBoards: [Board!]!
+  boardById(id: ID!): Board!
+  archivedBoards(id: ID!): [Board!]!
+  boardsRelatedByProjectId(id: ID!): [Board!]!
+  
+}
+
+input newSwimlaneOrderInput {
+  id: ID!
+  swimlaneOrderNumber: Int!
+}
+
+type SwimlaneOrderObject {
+  id: ID!
+  swimlaneOrderNumber: Int!
+}
+
+type Mutation {
+  deleteBoard(id: ID!, name: String!): Board!
+}
+
+type Mutation {
+  addBoard(
+    name: String!
+    prettyId: String!
+    eventId: ID!
+    projectId: ID!
+  ): Board!
+  moveSwimlane(
+    boardId: ID!
+    affectedSwimlanes: [newSwimlaneOrderInput]!
+    swimlaneOrder: [ID!]!
+    eventId: ID!
+  ): ID
+  archiveBoardById(boardId: ID!, projectId: ID!, eventId: ID!): ID
+  restoreBoardById(boardId: ID!, projectId: ID!, eventId: ID!): ID
+  
+}
+
+type Subscription {
+  swimlaneMoved(boardId: ID!, eventId: ID!): SwimlaneMovedPayload!
+  boardAdded(projectId: ID!, eventId: ID!): BoardAddedPayload!
+  boardDeleted(projectId: ID!, eventId: ID!): BoardAddedPayload!
+  boardRemoved(projectId: ID!, eventId: ID!): BoardRemovedPayload!
+}
+
+type SwimlaneMovedPayload {
+  boardId: ID!
+  affectedSwimlanes: [SwimlaneOrderObject]!
+  swimlaneOrder: [ID]!
+}
+
+type BoardAddedPayload {
+  mutationType: MutationType!
+  board: Board!
+}
+
+type BoardRemovedPayload {
+  removeType: RemoveType!
+  removeInfo: RemoveInfo!
+}
+
+type RemoveInfo {
+  boardId: ID!
+  projectId: ID!
+}
+
+enum MutationType {
+  CREATED
+}
+
+enum RemoveType {
+  DELETED
+  ARCHIVED
+}

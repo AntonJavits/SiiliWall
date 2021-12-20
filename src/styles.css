@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap');
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+}
+
+/* html, body {
+    height: 100%;
+} */
+
+/* .addButton__link {
+    text-decoration: none;
+    color: #ff8d58;
+    font-size: 1.2rem;
+}
+
+.boardList__button__link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    width: 100%;
+} */
+
+#alertMessage {
+    font-size: 1rem;
+}
+
+.selectField {
+    margin-top: 12px;
+}
+
+button[editext="edit-button"] {
+    border-radius: 25%;
+    
+} 
+button[editext="cancel-button"] {
+    visibility: hidden;
+} 
+button[editext="save-button"] {
+    border-radius: 25%;
+} 
+
+div[editext="view-container"] {
+    font-size: 1.25rem;
+    font-weight: bolder;
+}
+
+input[editext="input"] {
+    border: none;
+    background-color: mintcream;
+    border-radius: 0.3rem;
+}
+
+.tablerow {
+    flex-direction: row;
+    display: flex;
+}

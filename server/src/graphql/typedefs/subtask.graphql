@@ -1,0 +1,95 @@
+input TicketOrderInput {
+  ticketId: ID!
+  type: String
+}
+
+type Subtask {
+  id: ID!
+  prettyId: String!
+  name: String
+  content: String!
+  storyPoints: String
+  spentStoryPoints: String
+  owner: User
+  members: [User!]
+  done: Boolean!
+  task: Task
+  orderNumber: Int!
+  deletedAt: String
+  column: Column
+  board: Board
+  colors: [Color!]!
+}
+
+type Query {
+  allColors: [Color!]!
+  allSubtasks: [Subtask!]!
+  archivedSubTasks(id: ID!): [Subtask!]!
+  archivedSubTasksByColumnId(id: ID!): [Subtask!]
+}
+
+type Mutation {
+  addSubtaskForTask(
+    taskId: ID!
+    columnId: ID!
+    boardId: ID!
+    name: String
+    content: String!
+    storyPoints: String
+    spentStoryPoints: String
+    ownerId: ID
+    memberIds: [ID!]
+    colorIds: [ID!]
+    ticketOrder: [TicketOrderInput!]
+    eventId: ID!
+  ): Subtask
+  editSubtask(
+    id: ID!
+    name: String
+    content: String!
+    storyPoints: String
+    spentStoryPoints: String
+    ownerId: ID
+    oldMemberIds: [ID!]
+    newMemberIds: [ID!]
+    oldColorIds: [ID!]
+    newColorIds: [ID!]
+    eventId: ID!
+    columnId: ID!
+  ): Subtask
+  addMemberForSubtask(id: ID!, userId: ID!): Task
+  deleteSubtaskById(id: ID!, columnId: ID!, boardId: ID!, eventId: ID!): ID
+  archiveSubtaskById(id: ID!, columnId: ID!, boardId: ID!, eventId: ID!): ID
+  restoreSubTaskById(subtaskId: ID!, boardId: ID!, eventId: ID!): ID
+}
+
+type Subscription {
+  subtaskMutated(boardId: ID!, eventId: ID!): SubtaskMutationPayload!
+  subtaskRemoved(boardId: ID!, eventId: ID!): SubtaskRemovedPayload!
+}
+
+type SubtaskMutationPayload {
+  mutationType: MutationType!
+  subtask: Subtask!
+}
+
+type SubtaskRemovedPayload {
+  removeType: RemoveType!
+  removeInfo: RemoveInfo!
+}
+
+enum MutationType {
+  CREATED
+  UPDATED
+}
+
+enum RemoveType {
+  DELETED
+  ARCHIVED
+}
+
+type RemoveInfo {
+  subtaskId: ID!
+  columnId: ID!
+  boardId: ID!
+}

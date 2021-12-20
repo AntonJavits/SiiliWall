@@ -1,0 +1,28 @@
+type ShortForm {
+  id: ID!
+  prettyId: String!
+}
+
+type Query {
+  ShortFormsByProjectId(projectId: ID!): [ShortForm!]!
+}
+
+type Mutation {
+  addShortForm(
+    prettyId: String!
+    projectId: ID!
+  ): ShortForm!
+}
+
+type Subscription {
+  shortFormAdded(projectId: ID!): ShortFormAddedPayload!
+}
+
+type ShortFormAddedPayload {
+  mutationType: MutationType!
+  ShortForm: ShortForm!
+}
+
+enum MutationType {
+  CREATED
+}

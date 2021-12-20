@@ -1,0 +1,36 @@
+type Project {
+    id: ID!
+    name: String!
+    boards: [Board!]!
+    orderNumber: Int!
+}
+
+type Query {
+    projectById(id: ID!): Project!
+    boardsByProjectId(id: ID!): [Board!]!
+    allProjects: [Project!]!
+    archivedProjects: [Project!]!
+}
+
+type Mutation {
+     addProject(name: String!): Project!
+     archiveProjectById(projectId: ID!, eventId: ID!): ID
+     restoreProjectById(projectId: ID!, eventId: ID!): ID
+}
+
+type Subscription {
+  projectRemoved(projectId: ID!, eventId: ID!): ProjectRemovedPayload!
+}
+
+type ProjectRemovedPayload {
+  removeType: RemoveType!
+  removeInfo: RemoveInfo!
+}
+
+type RemoveInfo {
+  projectId: ID!
+}
+
+enum RemoveType {
+  ARCHIVED
+}

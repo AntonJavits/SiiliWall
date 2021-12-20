@@ -1,0 +1,100 @@
+enum AllowedTicketType {
+  task
+  subtask
+}
+
+input TicketOrderInput {
+  ticketId: ID!
+  type: String
+}
+
+type TicketOrderObject {
+  ticketId: ID!
+  type: AllowedTicketType
+}
+
+type Column {
+  id: ID!
+  name: String!
+  board: Board!
+  orderNumber: Int!
+  hidden: String!
+  stories: [Story!]!
+  tasks: [Task!]!
+  subtasks: [Subtask!]!
+  ticketOrder: [TicketOrderObject!]!
+}
+
+type Query {
+  columnById(id: ID!): Column!
+  allColumns: [Column!]!
+}
+
+type Mutation {
+  addColumnForBoard(boardId: ID!, columnName: String!, eventId: ID!, hidden: String!): Column
+  editColumnById(id: ID!, name: String!, boardId: ID!, eventId: ID!): Column
+  deleteColumnById(id: ID!, boardId: ID!, eventId: ID!): ID
+  moveTicketInColumn(
+    newOrder: [TicketOrderInput!]!
+    columnId: ID!
+    boardId: ID!
+  ): Column
+  moveTicketFromColumn(
+    type: String!
+    ticketId: ID!
+    sourceColumnId: ID!
+    destColumnId: ID!
+    sourceTicketOrder: [TicketOrderInput!]!
+    destTicketOrder: [TicketOrderInput!]!
+    eventId: ID!
+  ): [Column!]
+  moveColumn(boardId: ID!, newColumnOrder: [ID!]!): ID!
+}
+
+type Subscription {
+  ticketMovedInColumn(boardId: ID!): TicketMovedInColumnPayload!
+  ticketMovedFromColumn(
+    boardId: ID!
+    eventId: ID!
+  ): TicketMovedFromColumnPayload!
+  columnDeleted(boardId: ID!, eventId: ID!): ColumnRemovePayload!
+  columnMutated(boardId: ID!, eventId: ID!): ColumnMutatedPayload!
+}
+
+type ColumnMutatedPayload {
+  mutationType: MutationType!
+  column: Column!
+}
+
+enum MutationType {
+  CREATED
+  EDITED
+}
+
+type ColumnRemovePayload {
+  removeType: RemoveType!
+  removeInfo: RemoveInfo!
+}
+
+type RemoveInfo {
+  columnId: ID!
+  boardId: ID!
+}
+
+enum RemoveType {
+  DELETED
+  ARCHIVED
+}
+
+type TicketMovedInColumnPayload {
+  newOrder: [TicketOrderObject!]!
+  columnId: ID!
+}
+
+type TicketMovedFromColumnPayload {
+  ticketInfo: TicketOrderObject!
+  sourceColumnId: ID!
+  destColumnId: ID!
+  sourceTicketOrder: [TicketOrderObject!]!
+  destTicketOrder: [TicketOrderObject!]!
+}

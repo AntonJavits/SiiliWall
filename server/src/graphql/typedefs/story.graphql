@@ -1,0 +1,24 @@
+type Story {
+    id: ID!
+    title: String!
+    owner: User
+    size: Float
+    description: String
+    column: Column!
+    deletedAt: String
+    members: [User!]!
+    board: Board
+}
+
+type Query {
+    storyById(id: ID!): Story!
+}
+
+type Mutation {
+    addStoryForColumn(boardId: ID!, columnId: ID!, title: String!, size: Float, ownerId: ID, memberIds: [ID!]!, description: String): Story
+    editStoryById(id: ID!, title: String!, size: Float, ownerId: ID, oldMemberIds: [ID!]!, newMemberIds: [ID!]!, description: String): Story
+    deleteStoryById(id: ID!): ID
+    archiveStoryById(id: ID!): ID
+    restoreStoryById(id: ID!): Story
+    addMemberForStory(id: ID!, userId: ID!): Story
+}
